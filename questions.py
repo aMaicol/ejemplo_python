@@ -1,25 +1,34 @@
 import random
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+dictionary = {
+    "informatica": [
+        "python",
+        "programa",
+        "variable",
+        "funcion",
+        "bucle",
+        "cadena",
+        "entero",
+        "lista",
+    ],
+    "hardware": ["teclado", "mouse", "procesador"],
+}
 
-word = random.choice(words)
+print("¡Bienvenido al Ahorcado!")
+print()
+
+choice = input(
+    f"Seleccione una de las siguientes categorias: {', '.join(dictionary.keys())}. "
+)
+print()
+
+word = random.choice(dictionary[choice])
 guessed = []
 
 attempts = 6
 
 score = 0
 
-print("¡Bienvenido al Ahorcado!")
-print()
 
 while attempts > 0:
     # Mostrar progreso: letras adivinadas y guiones para las que faltan
